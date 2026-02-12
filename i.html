@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Terminal | Invite Access</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      background: #000;
+      color: #00ff88;
+      font-family: monospace;
+      margin: 0;
+      padding: 40px 20px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .container {
+      max-width: 500px;
+      width: 100%;
+    }
+
+    h1 {
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 13px;
+      opacity: 0.7;
+      margin-bottom: 25px;
+    }
+
+    label {
+      font-size: 12px;
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    input, select {
+      width: 100%;
+      background: black;
+      border: 1px solid #00ff88;
+      color: #00ff88;
+      padding: 8px;
+      margin-bottom: 18px;
+      font-family: monospace;
+    }
+
+    input[type="file"] {
+      border: none;
+    }
+
+    button {
+      width: 100%;
+      border: 1px solid #00ff88;
+      background: black;
+      color: #00ff88;
+      padding: 10px;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    button:hover {
+      background: #00ff88;
+      color: black;
+    }
+
+    .footer {
+      font-size: 10px;
+      opacity: 0.5;
+      margin-top: 20px;
+    }
+
+  </style>
+</head>
+
+<body>
+<div class="container">
+
+<h1>> initiate_selection_protocol</h1>
+<p>Invite-only curated compatibility network for professionals.</p>
+
+<form>
+
+<label>Username (internal handle)</label>
+<input type="text" required placeholder="create a unique username">
+
+<label>Email (for invite access)</label>
+<input type="email" required>
+
+<label>LinkedIn URL</label>
+<input type="url" required>
+
+<label>Instagram URL (optional)</label>
+<input type="url">
+
+<label>College</label>
+<input type="text" required>
+
+<label>Current Position</label>
+<input type="text" required>
+
+<label>Company / Tech Park (optional)</label>
+<input type="text">
+
+<label>City</label>
+<select required>
+  <option value="">Select City</option>
+  <option>Bengaluru</option>
+  <option>Noida</option>
+  <option>Gurgaon</option>
+  <option>Hyderabad</option>
+  <option>Pune</option>
+  <option>Mumbai</option>
+</select>
+
+<label>Area / Tech Park</label>
+<input type="text">
+
+<label>Age</label>
+<input type="number" required>
+
+<label>Height (in cm)</label>
+<input type="number">
+
+<label>Religion (optional)</label>
+<input type="text">
+
+<label>Mode Preference</label>
+<select required>
+  <option value="">Select Mode</option>
+  <option>Date Mode</option>
+  <option>Group Mode</option>
+  <option>Both</option>
+</select>
+
+<label>Select up to 5 Interest Signals</label>
+
+<select id="interests" multiple size="12" required>
+<option>Badminton</option>
+<option>Tennis</option>
+<option>Cricket</option>
+<option>Football</option>
+<option>Basketball</option>
+<option>Table Tennis</option>
+<option>Swimming</option>
+<option>Running</option>
+<option>Gym Training</option>
+<option>Yoga</option>
+<option>Trekking</option>
+<option>Travel</option>
+<option>Weekend Trips</option>
+<option>Road Trips</option>
+<option>Backpacking</option>
+<option>Cafes</option>
+<option>Fine Dining</option>
+<option>Street Food</option>
+<option>Food Trails</option>
+<option>Parties</option>
+<option>House Parties</option>
+<option>Drinks</option>
+<option>Wine Tasting</option>
+<option>Nightlife</option>
+<option>Live Music</option>
+<option>Music</option>
+<option>Concerts</option>
+<option>Movies</option>
+<option>Indie Films</option>
+<option>Stand-up Comedy</option>
+<option>Theatre</option>
+<option>Art & Culture</option>
+<option>Art Exhibitions</option>
+<option>Photography</option>
+<option>Books</option>
+<option>Book Clubs</option>
+<option>Writing</option>
+<option>Tech Events</option>
+<option>Startup Networking</option>
+<option>Hackathons</option>
+<option>Entrepreneurship</option>
+<option>Investing</option>
+<option>AI & Machine Learning</option>
+<option>Public Speaking</option>
+<option>Career Growth</option>
+<option>Meditation</option>
+<option>Mindfulness</option>
+<option>Psychology</option>
+<option>Self Development</option>
+<option>Philosophy</option>
+<option>Gaming</option>
+<option>Chess</option>
+<option>Board Games</option>
+<option>Escape Rooms</option>
+<option>Cooking</option>
+<option>Baking</option>
+<option>Pet Lovers</option>
+<option>Volunteering</option>
+</select>
+
+<p style="font-size:11px; opacity:0.6;">
+You can select up to 5. High-signal interests improve match precision.
+</p>
+
+<script>
+const select = document.getElementById("interests");
+
+select.addEventListener("change", function () {
+    if (this.selectedOptions.length > 5) {
+        alert("You can select a maximum of 5 interests.");
+        for (let i = 0; i < this.options.length; i++) {
+            if (!this.options[i].selected) continue;
+            if (this.selectedOptions.length > 5) {
+                this.options[i].selected = false;
+            }
+        }
+    }
+});
+</script>
+
+<label>Upload 1 Image (Headshot preferred)</label>
+<input type="file" accept="image/*" required>
+
+<button type="submit">Submit for Review</button>
+
+<div class="footer">
+This is an invite-only platform.  
+Your data will not be publicly visible.  
+Profiles are reviewed before invite approval.  
+18+ only. Terms & Privacy apply.
+</div>
+
+</form>
+
+</div>
+</body>
+</html>
+
